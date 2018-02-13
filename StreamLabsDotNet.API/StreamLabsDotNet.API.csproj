@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
+    <PackageId>StreamLabsCSharp.API</PackageId>
+    <Version>0.0.1</Version>
+    <Description></Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>LuckyNoS7evin</Authors>
+    <Company>LuckyNoS7evin</Company>
+    <PackageIconUrl></PackageIconUrl>
+    <PackageProjectUrl>https://github.com/LuckyNoS7evin/StreamLabsCSharp</PackageProjectUrl>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <Copyright>Copyright 2017</Copyright>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/LuckyNoS7evin/StreamLabsCSharp</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>streamlabs library websocket c# csharp api events dotnet net standard 2.0</PackageTags>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <AssemblyName>StreamLabsDotNet.API</AssemblyName>
+    <RootNamespace>StreamLabsDotNet.API</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net452'">
+    <DefineConstants>NET452</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
+    <DefineConstants>NETSTANDARD</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Alerts.cs" />
+    <Compile Remove="Authentication.cs" />
+    <Compile Remove="Donations.cs" />
+    <Compile Remove="Users - Copy.cs" />
+    <Compile Remove="Users.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Donations.cs" />
+    <None Include="Alerts.cs" />
+    <None Include="Users - Copy.cs" />
+    <None Include="Users.cs" />
+    <None Include="Authentication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+</Project>
