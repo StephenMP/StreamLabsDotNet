@@ -29,12 +29,18 @@
     <Compile Remove="AlertProfiles.cs" />
     <Compile Remove="Alerts.cs" />
     <Compile Remove="Authentication.cs" />
+    <Compile Remove="Credits.cs" />
     <Compile Remove="Donations.cs" />
+    <Compile Remove="Jar.cs" />
     <Compile Remove="Other.cs" />
     <Compile Remove="Sockets.cs" />
     <Compile Remove="Users.cs" />
+    <Compile Remove="Wheel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Wheel.cs" />
+    <None Include="Jar.cs" />
+    <None Include="Credits.cs" />
     <None Include="AlertProfiles.cs" />
     <None Include="Donations.cs" />
     <None Include="Alerts.cs" />
