@@ -4,9 +4,9 @@ using System.Text;
 
 namespace StreamLabsDotNet.API
 {
-    public class Sockets : ApiBase
+    public class Other : ApiBase
     {
-        public async Task<SocketResponse> GetSocketTokenAsync(string accessToken)
+        public async Task<LegacyTokenResponse> GetLegacyTokenAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
@@ -14,7 +14,7 @@ namespace StreamLabsDotNet.API
             var payload = new Dictionary<string, object> {
                 { "access_token",accessToken}
             };
-            return JsonConvert.DeserializeObject<SocketResponse>((await GeneralRequestAsync(url, "GET", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<LegacyTokenResponse>((await GeneralRequestAsync(url, "GET", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
     }
 }

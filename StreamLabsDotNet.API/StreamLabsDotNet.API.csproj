@@ -29,12 +29,14 @@
     <Compile Remove="Alerts.cs" />
     <Compile Remove="Authentication.cs" />
     <Compile Remove="Donations.cs" />
+    <Compile Remove="Other.cs" />
     <Compile Remove="Sockets.cs" />
     <Compile Remove="Users.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Donations.cs" />
     <None Include="Alerts.cs" />
+    <None Include="Other.cs" />
     <None Include="Sockets.cs" />
     <None Include="Users.cs" />
     <None Include="Authentication.cs" />
