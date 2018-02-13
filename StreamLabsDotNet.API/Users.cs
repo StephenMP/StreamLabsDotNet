@@ -8,7 +8,7 @@ namespace StreamLabsDotNet.API
     {
         public async Task<UserResponse> GetUserAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "user";
             var payload = new Dictionary<string, object> {

@@ -8,10 +8,10 @@ namespace StreamLabsDotNet.API
     {
         public async Task<string> AuthorizeAsync(string responseType, string clientId, string redirectUri, string scope, string state)
         {
-            if (string.IsNullOrWhiteSpace(responseType)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(clientId)) throw new BadParameterException("The extension id is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(redirectUri)) throw new BadParameterException("The extension version is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(scope)) throw new BadParameterException("The extension owner id is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(responseType)) throw new BadParameterException("Response Type is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(clientId)) throw new BadParameterException("Client Id is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(redirectUri)) throw new BadParameterException("Redirect Uri is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrEmpty(scope)) throw new BadParameterException("Scope is not valid. It is not allowed to be null or empty.");
 
             var url = "authorize";
             var payload = new Dictionary<string, object> {
@@ -25,12 +25,13 @@ namespace StreamLabsDotNet.API
         }
         public async Task<TokenResponse> GetTokenAsync(string grantType, string clientId, string clientSecret, string redirectUri, string code, string refreshToken)
         {
-            if (string.IsNullOrWhiteSpace(grantType)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(clientId)) throw new BadParameterException("The extension id is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(clientSecret)) throw new BadParameterException("The extension version is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(redirectUri)) throw new BadParameterException("The extension owner id is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (grantType == "authorization_code" && string.IsNullOrWhiteSpace(code)) throw new Exception("broke");
-            if (grantType == "refresh_token" && string.IsNullOrWhiteSpace(refreshToken)) throw new Exception("broke");
+            if (string.IsNullOrWhiteSpace(grantType)) throw new BadParameterException("Grant Type is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(clientId)) throw new BadParameterException("Client Id is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(clientSecret)) throw new BadParameterException("Client Secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(redirectUri)) throw new BadParameterException("Redirect Uri is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+
+            if (grantType == "authorization_code" && string.IsNullOrWhiteSpace(code)) throw new Exception("If Grant Type is authorization_code you need to supply code");
+            if (grantType == "refresh_token" && string.IsNullOrWhiteSpace(refreshToken)) throw new Exception("If Grant Type is refresh_token you need to supply refreshToken");
 
             var url = "token";
             var payload = new Dictionary<string, object> {

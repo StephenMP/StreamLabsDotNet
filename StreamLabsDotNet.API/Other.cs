@@ -8,9 +8,9 @@ namespace StreamLabsDotNet.API
     {
         public async Task<LegacyTokenResponse> GetLegacyTokenAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
-            var url = "user";
+            var url = "legacy/token";
             var payload = new Dictionary<string, object> {
                 { "access_token",accessToken}
             };

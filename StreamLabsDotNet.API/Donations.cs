@@ -8,7 +8,7 @@ namespace StreamLabsDotNet.API
     {
         public async Task<DonationsResponse> GetDonationsAsync(string accessToken, int? limit = null, int? after = null, int? before = null, string currency = null, bool? verified = null)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "donations";
             var payload = new Dictionary<string, object> {
@@ -25,11 +25,11 @@ namespace StreamLabsDotNet.API
         }
         public async Task<CreateDonationResponse> CreateDonationAsync(string accessToken, string name, string identifier, double amount, string currency, string message = null, DateTime? createdAt = null)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(name)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(identifier)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(currency)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (amount <= 0) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(name)) throw new BadParameterException("Name is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(identifier)) throw new BadParameterException("Identifier is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(currency)) throw new BadParameterException("Currency is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (amount <= 0) throw new BadParameterException("Amount is not valid. It cannot be less than or equal to zero.");
 
             var url = "donations";
             var payload = new Dictionary<string, object> {

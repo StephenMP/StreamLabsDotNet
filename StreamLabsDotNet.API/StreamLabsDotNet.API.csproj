@@ -26,6 +26,7 @@
     <DefineConstants>NETSTANDARD</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="AlertProfiles.cs" />
     <Compile Remove="Alerts.cs" />
     <Compile Remove="Authentication.cs" />
     <Compile Remove="Donations.cs" />
@@ -34,6 +35,7 @@
     <Compile Remove="Users.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AlertProfiles.cs" />
     <None Include="Donations.cs" />
     <None Include="Alerts.cs" />
     <None Include="Other.cs" />

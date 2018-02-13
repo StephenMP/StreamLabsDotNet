@@ -8,8 +8,8 @@ namespace StreamLabsDotNet.API
     {
         public async Task<AlertResponse> CreateAlertAsync(string accessToken, string type, string imageHref = null, string soundHref = null, string message = null, int? durationMilliseconds = null, string specialTextColour = null)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(type)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Type is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts";
             var payload = new Dictionary<string, object> {
@@ -27,7 +27,7 @@ namespace StreamLabsDotNet.API
         }
         public async Task<AlertResponse> SkipAlertAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts/skip";
             var payload = new Dictionary<string, object> {
@@ -38,7 +38,7 @@ namespace StreamLabsDotNet.API
         }
         public async Task<AlertResponse> MuteVolumeAlertAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts/mute_volume";
             var payload = new Dictionary<string, object> {
@@ -49,7 +49,7 @@ namespace StreamLabsDotNet.API
         }
         public async Task<AlertResponse> UnmuteVolumeAlertAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts/unmute_volume";
             var payload = new Dictionary<string, object> {
@@ -60,7 +60,7 @@ namespace StreamLabsDotNet.API
         }
         public async Task<AlertResponse> PauseQueueAlertAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts/pause_queue";
             var payload = new Dictionary<string, object> {
@@ -71,7 +71,7 @@ namespace StreamLabsDotNet.API
         }
         public async Task<AlertResponse> UnpauseQueueAlertAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts/unpause_queue";
             var payload = new Dictionary<string, object> {
@@ -82,8 +82,8 @@ namespace StreamLabsDotNet.API
         }
         public async Task<AlertResponse> SendTestAlertAsync(string accessToken, string type)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
-            if (string.IsNullOrWhiteSpace(type)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(type)) throw new BadParameterException("Type is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts/send_test_alert";
             var payload = new Dictionary<string, object> {
@@ -95,7 +95,7 @@ namespace StreamLabsDotNet.API
         }
         public async Task<AlertResponse> ShowVideoAlertAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts/show_video";
             var payload = new Dictionary<string, object> {
@@ -106,7 +106,7 @@ namespace StreamLabsDotNet.API
         }
         public async Task<AlertResponse> HideVideoAlertAsync(string accessToken)
         {
-            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("The extension secret is not valid. It is not allowed to be null, empty or filled with whitespaces.");
+            if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
             var url = "alerts/hide_video";
             var payload = new Dictionary<string, object> {
