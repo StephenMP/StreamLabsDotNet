@@ -5,7 +5,7 @@ using System.Text;
 
 namespace StreamLabsDotNet.API.Models
 {
-    public partial class AlertResponse
+    public partial class SuccessResponse
     {
         [JsonProperty("success")]
         public bool Success { get; set; }

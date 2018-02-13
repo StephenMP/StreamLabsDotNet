@@ -6,7 +6,7 @@ namespace StreamLabsDotNet.API
 {
     public class Alerts : ApiBase
     {
-        public async Task<AlertResponse> CreateAlertAsync(string accessToken, string type, string imageHref = null, string soundHref = null, string message = null, int? durationMilliseconds = null, string specialTextColour = null)
+        public async Task<SuccessResponse> CreateAlertAsync(string accessToken, string type, string imageHref = null, string soundHref = null, string message = null, int? durationMilliseconds = null, string specialTextColour = null)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Type is not valid. It is not allowed to be null, empty or filled with whitespaces.");
@@ -23,9 +23,9 @@ namespace StreamLabsDotNet.API
             if (!string.IsNullOrEmpty(specialTextColour)) payload.Add("special_text_color", specialTextColour);
             if (durationMilliseconds.HasValue) payload.Add("duration", durationMilliseconds.Value);
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Body).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Body).ConfigureAwait(false)).Value);
         }
-        public async Task<AlertResponse> SkipAlertAsync(string accessToken)
+        public async Task<SuccessResponse> SkipAlertAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
@@ -34,9 +34,9 @@ namespace StreamLabsDotNet.API
                 { "access_token",accessToken}
             };
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
-        public async Task<AlertResponse> MuteVolumeAlertAsync(string accessToken)
+        public async Task<SuccessResponse> MuteVolumeAlertAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
@@ -45,9 +45,9 @@ namespace StreamLabsDotNet.API
                 { "access_token",accessToken}
             };
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
-        public async Task<AlertResponse> UnmuteVolumeAlertAsync(string accessToken)
+        public async Task<SuccessResponse> UnmuteVolumeAlertAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
@@ -56,9 +56,9 @@ namespace StreamLabsDotNet.API
                 { "access_token",accessToken}
             };
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
-        public async Task<AlertResponse> PauseQueueAlertAsync(string accessToken)
+        public async Task<SuccessResponse> PauseQueueAlertAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
@@ -67,9 +67,9 @@ namespace StreamLabsDotNet.API
                 { "access_token",accessToken}
             };
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
-        public async Task<AlertResponse> UnpauseQueueAlertAsync(string accessToken)
+        public async Task<SuccessResponse> UnpauseQueueAlertAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
@@ -78,9 +78,9 @@ namespace StreamLabsDotNet.API
                 { "access_token",accessToken}
             };
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
-        public async Task<AlertResponse> SendTestAlertAsync(string accessToken, string type)
+        public async Task<SuccessResponse> SendTestAlertAsync(string accessToken, string type)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
             if (string.IsNullOrWhiteSpace(type)) throw new BadParameterException("Type is not valid. It is not allowed to be null, empty or filled with whitespaces.");
@@ -91,9 +91,9 @@ namespace StreamLabsDotNet.API
                 { "type",type}
             };
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
-        public async Task<AlertResponse> ShowVideoAlertAsync(string accessToken)
+        public async Task<SuccessResponse> ShowVideoAlertAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
@@ -102,9 +102,9 @@ namespace StreamLabsDotNet.API
                 { "access_token",accessToken}
             };
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
-        public async Task<AlertResponse> HideVideoAlertAsync(string accessToken)
+        public async Task<SuccessResponse> HideVideoAlertAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");
 
@@ -113,7 +113,7 @@ namespace StreamLabsDotNet.API
                 { "access_token",accessToken}
             };
 
-            return JsonConvert.DeserializeObject<AlertResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
+            return JsonConvert.DeserializeObject<SuccessResponse>((await GeneralRequestAsync(url, "POST", payload, RequestType.Query).ConfigureAwait(false)).Value);
         }
 
     }
