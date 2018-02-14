@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
-    <PackageId>StreamLabsCSharp.Client</PackageId>
+    <PackageId>StreamLabsDotNet.Client</PackageId>
     <Version>0.0.1</Version>
     <Description></Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>LuckyNoS7evin</Authors>
     <Company>LuckyNoS7evin</Company>
     <PackageIconUrl></PackageIconUrl>
-    <PackageProjectUrl>https://github.com/LuckyNoS7evin/StreamLabsCSharp</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/LuckyNoS7evin/StreamLabsDotNet</PackageProjectUrl>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <Copyright>Copyright 2017</Copyright>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <RepositoryUrl>https://github.com/LuckyNoS7evin/StreamLabsCSharp</RepositoryUrl>
+    <RepositoryUrl>https://github.com/LuckyNoS7evin/StreamLabsDotNet</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
     <PackageTags>streamlabs library websocket c# csharp api events dotnet net standard 2.0</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>

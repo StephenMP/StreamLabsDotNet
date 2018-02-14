@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StreamLabsDotNet.API.Models;
+using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text;
 
 namespace StreamLabsDotNet.API
 {
-    public class AlertProfiles : ApiBase
+    public class AlertProfiles : StreamlabsApiBase
     {
         public async Task<AlertProfileResponse> GetAlertProfilesAsync(string accessToken)
         {

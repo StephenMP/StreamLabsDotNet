@@ -1,4 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net452</TargetFrameworks>
     <PackageId>StreamLabsCSharp.API</PackageId>
@@ -25,30 +31,6 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0'">
     <DefineConstants>NETSTANDARD</DefineConstants>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="AlertProfiles.cs" />
-    <Compile Remove="Alerts.cs" />
-    <Compile Remove="Authentication.cs" />
-    <Compile Remove="Credits.cs" />
-    <Compile Remove="Donations.cs" />
-    <Compile Remove="Jar.cs" />
-    <Compile Remove="Other.cs" />
-    <Compile Remove="Sockets.cs" />
-    <Compile Remove="Users.cs" />
-    <Compile Remove="Wheel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Wheel.cs" />
-    <None Include="Jar.cs" />
-    <None Include="Credits.cs" />
-    <None Include="AlertProfiles.cs" />
-    <None Include="Donations.cs" />
-    <None Include="Alerts.cs" />
-    <None Include="Other.cs" />
-    <None Include="Sockets.cs" />
-    <None Include="Users.cs" />
-    <None Include="Authentication.cs" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>

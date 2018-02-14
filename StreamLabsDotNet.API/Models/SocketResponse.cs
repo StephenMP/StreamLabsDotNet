@@ -8,6 +8,6 @@ namespace StreamLabsDotNet.API.Models
     public partial class SocketResponse
     {
         [JsonProperty("socket_token")]
-        public bool SocketToken { get; set; }
+        public string SocketToken { get; set; }
     }
 }

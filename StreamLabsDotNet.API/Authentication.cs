@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StreamLabsDotNet.API.Models;
+using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text;
 
 namespace StreamLabsDotNet.API
 {
-    public class Authentication : ApiBase
+    public class Authentication : StreamlabsApiBase
     {
         public async Task<string> AuthorizeAsync(string responseType, string clientId, string redirectUri, string scope, string state)
         {

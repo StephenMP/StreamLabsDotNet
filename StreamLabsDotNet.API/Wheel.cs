@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StreamLabsDotNet.API.Models;
+using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text;
 
 namespace StreamLabsDotNet.API
 {
-    public class Wheel : ApiBase
+    public class Wheel : StreamlabsApiBase
     {
         public async Task<SuccessResponse> SpinWheelAsync(string accessToken)
         {

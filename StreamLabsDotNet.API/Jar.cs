@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StreamLabsDotNet.API.Models;
+using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text;
 
 namespace StreamLabsDotNet.API
 {
-    public class Jar : ApiBase
+    public class Jar : StreamlabsApiBase
     {
         public async Task<SuccessResponse> EmptyJarAsync(string accessToken)
         {

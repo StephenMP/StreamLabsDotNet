@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using StreamLabsDotNet.API.Models;
+using System.Threading.Tasks;
 using System.Collections.Generic;
-using System.Text;
 
 namespace StreamLabsDotNet.API
 {
-    public class Sockets : ApiBase
+    public class Sockets : StreamlabsApiBase
     {
         public async Task<SocketResponse> GetSocketTokenAsync(string accessToken)
         {

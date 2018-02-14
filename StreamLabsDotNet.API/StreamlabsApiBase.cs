@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using StreamLabsDotNet.API.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -8,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace StreamLabsDotNet.API
 {
-    public abstract class ApiBase
+    public abstract class StreamlabsApiBase
     {
         private const string _apiUrl = "https://streamlabs.com/api/v1.0/{0}";
 
-        private enum RequestType
+        protected enum RequestType
         {
             Query,
             Body
         }
 
-        private async Task<KeyValuePair<int, string>> GeneralRequestAsync(string url, string method, Dictionary<string,object> requestParameters, RequestType requesttype )
+        protected async Task<KeyValuePair<int, string>> GeneralRequestAsync(string url, string method, Dictionary<string,object> requestParameters, RequestType requesttype )
         {
             //Work out payload first 
             var payload = string.Empty;
@@ -63,7 +61,7 @@ namespace StreamLabsDotNet.API
             return new KeyValuePair<int, string>(0, null);
         }
 
-        private int GetEpoch()
+        protected int GetEpoch()
         {
             TimeSpan t = DateTime.UtcNow - new DateTime(1970, 1, 1);
             int secondsSinceEpoch = (int)t.TotalSeconds;

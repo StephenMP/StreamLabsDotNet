@@ -8,6 +8,6 @@ namespace StreamLabsDotNet.API.Models
     public partial class LegacyTokenResponse
     {
         [JsonProperty("token")]
-        public bool Token { get; set; }
+        public string Token { get; set; }
     }
 }
