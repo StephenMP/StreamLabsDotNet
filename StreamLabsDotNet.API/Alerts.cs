@@ -1,12 +1,17 @@
 ﻿using Newtonsoft.Json;
-using StreamLabsDotNet.API.Models;
+using StreamLabsDotNet.Api.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
-namespace StreamLabsDotNet.API
+namespace StreamLabsDotNet.Api
 {
-    public class Alerts : StreamLabsDotNet.API.StreamlabsApiBase
+    public class Alerts : StreamlabsApiBase
     {
+        public Alerts(ILogger<Alerts> logger) : base(logger)
+        {
+
+        }
         public async Task<SuccessResponse> CreateAlertAsync(string accessToken, string type, string imageHref = null, string soundHref = null, string message = null, int? durationMilliseconds = null, string specialTextColour = null)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");

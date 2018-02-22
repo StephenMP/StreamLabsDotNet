@@ -1,13 +1,18 @@
 ﻿using Newtonsoft.Json;
-using StreamLabsDotNet.API.Models;
+using StreamLabsDotNet.Api.Models;
 using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
-namespace StreamLabsDotNet.API
+namespace StreamLabsDotNet.Api
 {
     public class Donations : StreamlabsApiBase
     {
+        public Donations(ILogger<Donations> logger) : base(logger)
+        {
+
+        }
         public async Task<DonationsResponse> GetDonationsAsync(string accessToken, int? limit = null, int? after = null, int? before = null, string currency = null, bool? verified = null)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");

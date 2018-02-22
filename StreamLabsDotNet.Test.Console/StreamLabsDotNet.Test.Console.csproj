@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StreamLabsDotNet.API\StreamLabsDotNet.API.csproj" />
+    <ProjectReference Include="..\StreamLabsDotNet.API\StreamLabsDotNet.Api.csproj" />
     <ProjectReference Include="..\StreamLabsDotNet.Client\StreamLabsDotNet.Client.csproj" />
   </ItemGroup>
 

@@ -1,13 +1,18 @@
 ﻿using Newtonsoft.Json;
-using StreamLabsDotNet.API.Models;
+using StreamLabsDotNet.Api.Models;
 using System;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
-namespace StreamLabsDotNet.API
+namespace StreamLabsDotNet.Api
 {
     public class Authentication : StreamlabsApiBase
     {
+        public Authentication(ILogger<Authentication> logger) : base(logger)
+        {
+
+        }
         public async Task<string> AuthorizeAsync(string responseType, string clientId, string redirectUri, string scope, string state)
         {
             if (string.IsNullOrWhiteSpace(responseType)) throw new BadParameterException("Response Type is not valid. It is not allowed to be null, empty or filled with whitespaces.");

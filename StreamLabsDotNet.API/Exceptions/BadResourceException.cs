@@ -1,4 +1,4 @@
-﻿namespace StreamLabsDotNet.API
+﻿namespace StreamLabsDotNet.Api
 { 
     #region using directives
 using System;

@@ -1,12 +1,17 @@
 ﻿using Newtonsoft.Json;
-using StreamLabsDotNet.API.Models;
+using StreamLabsDotNet.Api.Models;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
-namespace StreamLabsDotNet.API
+namespace StreamLabsDotNet.Api
 {
     public class AlertProfiles : StreamlabsApiBase
     {
+        public AlertProfiles(ILogger<AlertProfiles> logger) : base(logger)
+        {
+
+        }
         public async Task<AlertProfileResponse> GetAlertProfilesAsync(string accessToken)
         {
             if (string.IsNullOrWhiteSpace(accessToken)) throw new BadParameterException("Access token is not valid. It is not allowed to be null, empty or filled with whitespaces.");

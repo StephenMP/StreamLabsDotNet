@@ -1,13 +1,20 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace StreamLabsDotNet.API
+namespace StreamLabsDotNet.Api
 {
     public abstract class StreamlabsApiBase
     {
+        protected readonly ILogger<StreamlabsApiBase> _logger;
+        public StreamlabsApiBase(ILogger<StreamlabsApiBase> logger)
+        {
+            _logger = logger;
+        }
+
         private const string _apiUrl = "https://streamlabs.com/api/v1.0/{0}";
 
         protected enum RequestType

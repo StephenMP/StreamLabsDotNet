@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace StreamLabsDotNet.API.Models
+namespace StreamLabsDotNet.Api.Models
 {
     public partial class DonationResponse
     {
