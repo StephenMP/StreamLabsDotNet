@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace StreamLabsDotNet.Api
 {
-    public class Users : StreamlabsApiBase
+    public class Users : StreamLabsApiBase
     {
         public Users(ILogger<Users> logger) : base(logger)
         {

@@ -9,12 +9,12 @@ using System.Collections.Immutable;
 namespace StreamLabsDotNet.Client
 {
 
-    public class StreamlabsClient
+    public class StreamLabsClient
     {
-        private readonly ILogger<StreamlabsClient> _logger;
+        private readonly ILogger<StreamLabsClient> _logger;
         private readonly System.Timers.Timer _pingTimer;
         private Socket _socket;
-        public StreamlabsClient(ILogger<StreamlabsClient> logger)
+        public StreamLabsClient(ILogger<StreamLabsClient> logger)
         {
             _logger = logger;
             //Create ping timer to keep connection open
@@ -29,8 +29,7 @@ namespace StreamLabsDotNet.Client
         {
             _logger.LogDebug("SocketSetup: Started");
             SocketSetup(socketToken);
-            _logger.LogDebug("SocketSetup: Started");
-
+            _logger.LogDebug("SocketSetup: Ended");
             _logger.LogDebug("Connecting...");
             _socket.Connect();
         }

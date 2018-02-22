@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace StreamLabsDotNet.Api
 {
-    public abstract class StreamlabsApiBase
+    public abstract class StreamLabsApiBase
     {
-        protected readonly ILogger<StreamlabsApiBase> _logger;
-        public StreamlabsApiBase(ILogger<StreamlabsApiBase> logger)
+        protected readonly ILogger<StreamLabsApiBase> _logger;
+        public StreamLabsApiBase(ILogger<StreamLabsApiBase> logger)
         {
             _logger = logger;
         }

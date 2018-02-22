@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace StreamLabsDotNet.Api
 {
-    public class Donations : StreamlabsApiBase
+    public class Donations : StreamLabsApiBase
     {
         public Donations(ILogger<Donations> logger) : base(logger)
         {

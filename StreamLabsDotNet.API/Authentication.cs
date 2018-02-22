@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace StreamLabsDotNet.Api
 {
-    public class Authentication : StreamlabsApiBase
+    public class Authentication : StreamLabsApiBase
     {
         public Authentication(ILogger<Authentication> logger) : base(logger)
         {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace StreamLabsDotNet.Api
 {
-    public class AlertProfiles : StreamlabsApiBase
+    public class AlertProfiles : StreamLabsApiBase
     {
         public AlertProfiles(ILogger<AlertProfiles> logger) : base(logger)
         {

@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace StreamLabsDotNet.Api
 {
-    public class Wheel : StreamlabsApiBase
+    public class Wheel : StreamLabsApiBase
     {
         public Wheel(ILogger<Wheel> logger) : base(logger)
         {
