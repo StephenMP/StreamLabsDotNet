@@ -15,6 +15,7 @@ namespace StreamLabsDotNet.Api
         public Donations Donations { get; private set; }
         public Jar Jar { get; private set; }
         public Other Other { get; private set; }
+        public Points Points { get; private set; }
         public Sockets Sockets { get; private set; }
         public Users Users { get; private set; }
         public Wheel Wheel { get; private set; }
@@ -28,6 +29,7 @@ namespace StreamLabsDotNet.Api
             Donations = new Donations(loggerFactory.CreateLogger<Donations>());
             Jar = new Jar(loggerFactory.CreateLogger<Jar>());
             Other = new Other(loggerFactory.CreateLogger<Other>());
+            Points = new Points(loggerFactory.CreateLogger<Points>());
             Sockets = new Sockets(loggerFactory.CreateLogger<Sockets>());
             Users = new Users(loggerFactory.CreateLogger<Users>());
             Wheel = new Wheel(loggerFactory.CreateLogger<Wheel>());
