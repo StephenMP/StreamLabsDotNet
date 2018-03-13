@@ -7,7 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamLabsDotNet.Api", "Str
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamLabsDotNet.Client", "StreamLabsDotNet.Client\StreamLabsDotNet.Client.csproj", "{17EF2F33-E494-4C3A-BEC1-0554BAACE22B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamLabsDotNet.Test.Console", "StreamLabsDotNet.Test.Console\StreamLabsDotNet.Test.Console.csproj", "{4CB764EA-7C80-4AD7-871F-9A897179BA4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamLabsDotNet.Test.Console", "StreamLabsDotNet.Test.Console\StreamLabsDotNet.Test.Console.csproj", "{0772C869-3CC8-40EF-BD71-038C75B858C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamLabsDotNet.Unity", "StreamLabsDotNet.Unity\StreamLabsDotNet.Unity.csproj", "{4AAC8F07-3291-42CA-B3E8-04CD128BFE56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assemblies", "Assemblies", "{9273315B-2821-45D5-BD78-781407DBBF4A}"
+	ProjectSection(SolutionItems) = preProject
+		Assemblies\ILMerge.exe = Assemblies\ILMerge.exe
+		Assemblies\UnityEngine.dll = Assemblies\UnityEngine.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +31,14 @@ Global
 		{17EF2F33-E494-4C3A-BEC1-0554BAACE22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17EF2F33-E494-4C3A-BEC1-0554BAACE22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17EF2F33-E494-4C3A-BEC1-0554BAACE22B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CB764EA-7C80-4AD7-871F-9A897179BA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CB764EA-7C80-4AD7-871F-9A897179BA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CB764EA-7C80-4AD7-871F-9A897179BA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CB764EA-7C80-4AD7-871F-9A897179BA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0772C869-3CC8-40EF-BD71-038C75B858C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0772C869-3CC8-40EF-BD71-038C75B858C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0772C869-3CC8-40EF-BD71-038C75B858C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0772C869-3CC8-40EF-BD71-038C75B858C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAC8F07-3291-42CA-B3E8-04CD128BFE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAC8F07-3291-42CA-B3E8-04CD128BFE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAC8F07-3291-42CA-B3E8-04CD128BFE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAC8F07-3291-42CA-B3E8-04CD128BFE56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

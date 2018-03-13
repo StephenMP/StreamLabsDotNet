@@ -8,7 +8,7 @@ namespace StreamLabsDotNet.Api
 {
     public class Users : StreamLabsApiBase
     {
-        public Users(ILogger<Users> logger) : base(logger)
+        public Users(ILogger<StreamLabsApiBase> logger) : base(logger)
         {
 
         }

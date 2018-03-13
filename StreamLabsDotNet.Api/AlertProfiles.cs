@@ -8,7 +8,7 @@ namespace StreamLabsDotNet.Api
 {
     public class AlertProfiles : StreamLabsApiBase
     {
-        public AlertProfiles(ILogger<AlertProfiles> logger) : base(logger)
+        public AlertProfiles(ILogger<StreamLabsApiBase> logger) : base(logger)
         {
 
         }

@@ -9,7 +9,7 @@ namespace StreamLabsDotNet.Api
 {
     public class Donations : StreamLabsApiBase
     {
-        public Donations(ILogger<Donations> logger) : base(logger)
+        public Donations(ILogger<StreamLabsApiBase> logger) : base(logger)
         {
 
         }

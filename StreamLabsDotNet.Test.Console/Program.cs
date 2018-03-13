@@ -1,11 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using StreamLabsDotNet.Client;
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,7 +14,7 @@ namespace StreamLabsDotNet.Test.Console
      => new Program().MainAsync().GetAwaiter().GetResult();
 
         private static Mutex mutex = new Mutex(true, "{886D4E8D-0962-4174-85FC-FA36C0FFCB6D}");
-        private Client.StreamlabsClient _client;
+        private StreamLabsClient _client;
         public async Task MainAsync()
         {
             if (mutex.WaitOne(TimeSpan.Zero, true))
@@ -27,7 +23,7 @@ namespace StreamLabsDotNet.Test.Console
 
                 var serviceCollection = new ServiceCollection()
                .AddLogging()
-               .AddSingleton<StreamlabsClient>();
+               .AddSingleton<StreamLabsClient>();
                 
                 var serviceProvider = serviceCollection.BuildServiceProvider();
 
@@ -35,7 +31,7 @@ namespace StreamLabsDotNet.Test.Console
                     .GetService<ILoggerFactory>()
                     .AddConsole();
 
-                _client = serviceProvider.GetService<StreamlabsClient>();
+                _client = serviceProvider.GetService<StreamLabsClient>();
                 _client.OnConnected += _client_OnConnected;
                 _client.OnDisconnected += _client_OnDisconnected;
                 _client.Connect(socketToken);

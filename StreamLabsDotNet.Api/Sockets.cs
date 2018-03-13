@@ -8,7 +8,7 @@ namespace StreamLabsDotNet.Api
 {
     public class Sockets : StreamLabsApiBase
     {
-        public Sockets(ILogger<Sockets> logger) : base(logger)
+        public Sockets(ILogger<StreamLabsApiBase> logger) : base(logger)
         {
 
         }

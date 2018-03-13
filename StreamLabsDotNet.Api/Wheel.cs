@@ -8,7 +8,7 @@ namespace StreamLabsDotNet.Api
 {
     public class Wheel : StreamLabsApiBase
     {
-        public Wheel(ILogger<Wheel> logger) : base(logger)
+        public Wheel(ILogger<StreamLabsApiBase> logger) : base(logger)
         {
 
         }

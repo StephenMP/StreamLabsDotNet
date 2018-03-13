@@ -9,7 +9,7 @@ namespace StreamLabsDotNet.Api
 {
     public class Authentication : StreamLabsApiBase
     {
-        public Authentication(ILogger<Authentication> logger) : base(logger)
+        public Authentication(ILogger<StreamLabsApiBase> logger) : base(logger)
         {
 
         }

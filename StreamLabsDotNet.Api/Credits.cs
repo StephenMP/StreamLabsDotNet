@@ -8,7 +8,7 @@ namespace StreamLabsDotNet.Api
 {
     public class Credits : StreamLabsApiBase
     {
-        public Credits(ILogger<Credits> logger) : base(logger)
+        public Credits(ILogger<StreamLabsApiBase> logger) : base(logger)
         {
 
         }

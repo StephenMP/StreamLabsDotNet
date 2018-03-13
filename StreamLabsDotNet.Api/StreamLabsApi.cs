@@ -5,9 +5,9 @@ using System.Text;
 
 namespace StreamLabsDotNet.Api
 {
-    public class StreamLabsApi
+    public class StreamLabsApi : StreamLabsApiBase
     {
-        private readonly ILogger<StreamLabsApi> _logger;
+     //   private readonly ILogger<StreamLabsApiBase> _logger;
         public AlertProfiles AlertProfiles { get; private set; }
         public Alerts Alerts { get; private set; }
         public Authentication Authentication { get; private set; }
@@ -19,20 +19,20 @@ namespace StreamLabsDotNet.Api
         public Sockets Sockets { get; private set; }
         public Users Users { get; private set; }
         public Wheel Wheel { get; private set; }
-        public StreamLabsApi(ILoggerFactory loggerFactory)
+        public StreamLabsApi(ILogger<StreamLabsApiBase> logger = null) : base(logger)
         {
-            _logger = loggerFactory.CreateLogger<StreamLabsApi>();
-            AlertProfiles = new AlertProfiles(loggerFactory.CreateLogger<AlertProfiles>());
-            Alerts = new Alerts(loggerFactory.CreateLogger<Alerts>());
-            Authentication = new Authentication(loggerFactory.CreateLogger<Authentication>());
-            Credits = new Credits(loggerFactory.CreateLogger<Credits>());
-            Donations = new Donations(loggerFactory.CreateLogger<Donations>());
-            Jar = new Jar(loggerFactory.CreateLogger<Jar>());
-            Other = new Other(loggerFactory.CreateLogger<Other>());
-            Points = new Points(loggerFactory.CreateLogger<Points>());
-            Sockets = new Sockets(loggerFactory.CreateLogger<Sockets>());
-            Users = new Users(loggerFactory.CreateLogger<Users>());
-            Wheel = new Wheel(loggerFactory.CreateLogger<Wheel>());
+           // _logger = logger;
+            AlertProfiles = new AlertProfiles(logger);
+            Alerts = new Alerts(logger);
+            Authentication = new Authentication(logger);
+            Credits = new Credits(logger);
+            Donations = new Donations(logger);
+            Jar = new Jar(logger);
+            Other = new Other(logger);
+            Points = new Points(logger);
+            Sockets = new Sockets(logger);
+            Users = new Users(logger);
+            Wheel = new Wheel(logger);
         }
     }
 }

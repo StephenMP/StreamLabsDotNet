@@ -8,7 +8,7 @@ namespace StreamLabsDotNet.Api
 {
     public class Other : StreamLabsApiBase
     {
-        public Other(ILogger<Other> logger) : base(logger)
+        public Other(ILogger<StreamLabsApiBase> logger) : base(logger)
         {
 
         }
