@@ -5,7 +5,7 @@ using System.Text;
 
 namespace StreamLabsDotNet.Api
 {
-    public class StreamLabsApi : StreamLabsApiBase
+    public class Api : StreamLabsApiBase
     {
      //   private readonly ILogger<StreamLabsApiBase> _logger;
         public AlertProfiles AlertProfiles { get; private set; }
@@ -19,7 +19,7 @@ namespace StreamLabsDotNet.Api
         public Sockets Sockets { get; private set; }
         public Users Users { get; private set; }
         public Wheel Wheel { get; private set; }
-        public StreamLabsApi(ILogger<StreamLabsApiBase> logger = null) : base(logger)
+        public Api(ILogger<StreamLabsApiBase> logger = null) : base(logger)
         {
            // _logger = logger;
             AlertProfiles = new AlertProfiles(logger);

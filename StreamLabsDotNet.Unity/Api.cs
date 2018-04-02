@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
 namespace StreamLabsDotNet.Unity
 {
-    public class Api : StreamLabsDotNet.Api.StreamLabsApi
+    public class Api : StreamLabsDotNet.Api.Api
     {
         private readonly GameObject _threadDispatcher;
 
-        public Api() : base(null)
+        public Api() : base()
         {
             ServicePointManager.ServerCertificateValidationCallback = CertificateValidationMonoFix;
 
-            _threadDispatcher = new GameObject("StreamLabsApiUnityDispatcher");
+            _threadDispatcher = new GameObject($"StreamLabsApiUnityDispatcher-{Guid.NewGuid()}");
             _threadDispatcher.AddComponent<ThreadDispatcher>();
             UnityEngine.Object.DontDestroyOnLoad(_threadDispatcher);
 
