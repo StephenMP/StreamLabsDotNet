@@ -38,10 +38,7 @@ namespace StreamLabsDotNet.Test.Console
 
             }
 
-            while (true)
-            {
-                Thread.Sleep(TimeSpan.FromDays(1));
-            }
+            System.Console.ReadLine();
         }
 
         private void _client_OnDisconnected(object sender, bool e)
