@@ -1,11 +1,11 @@
 ﻿
+using System;
+using System.Collections.Immutable;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Quobject.EngineIoClientDotNet.Client.Transports;
 using Quobject.SocketIoClientDotNet.Client;
 using StreamLabsDotNet.Client.Models;
-using System;
-using System.Collections.Immutable;
 namespace StreamLabsDotNet.Client
 {
 
@@ -77,13 +77,6 @@ namespace StreamLabsDotNet.Client
                 if (string.IsNullOrEmpty(streamlabsEvent.For))
                 {
                     _logger?.LogTrace($"For: Empty or null");
-                    if (streamlabsEvent.Type == "donation")
-                    {
-                        var donation = JsonConvert.DeserializeObject<StreamlabsEvent<DonationMessage>>(eventData.ToString());
-                        _logger?.LogDebug($"Donation deserialized successfully");
-                        OnDonation?.Invoke(this, donation);
-                    }
-
                     if (streamlabsEvent.Type == "streamlabels")
                     {
                         var streamlabels = JsonConvert.DeserializeObject<StreamlabelsEvent>(eventData.ToString());
@@ -118,6 +111,14 @@ namespace StreamLabsDotNet.Client
         {
             switch (streamlabsEvent.For)
             {
+                case "streamlabs":
+                    if (streamlabsEvent.Type == "donation")
+                    {
+                        var donation = JsonConvert.DeserializeObject<StreamlabsEvent<DonationMessage>>(eventData.ToString());
+                        _logger?.LogDebug($"Donation deserialized successfully");
+                        OnDonation?.Invoke(this, donation);
+                    }
+                    break;
                 case "twitch_account":
                     {
                         switch (streamlabsEvent.Type)
@@ -215,9 +216,9 @@ namespace StreamLabsDotNet.Client
 
         #region EVENTS        
         public event EventHandler<bool> OnConnected;
-        
+
         public event EventHandler<bool> OnDisconnected;
-        
+
         public event EventHandler<string> OnError;
 
         public event EventHandler<string> OnUndocumented;
@@ -237,7 +238,7 @@ namespace StreamLabsDotNet.Client
         public event EventHandler<StreamlabsEvent<MixerFollowMessage>> OnMixerFollow;
         public event EventHandler<StreamlabsEvent<MixerSubscriptionMessage>> OnMixerSubscription;
         public event EventHandler<StreamlabsEvent<MixerHostMessage>> OnMixerHost;
-       
+
         #endregion
     }
 }
